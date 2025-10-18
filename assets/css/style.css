@@ -14,7 +14,22 @@ body {
   font-family: Inter, system-ui, Arial, sans-serif;
   color: var(--dark);
   line-height: 1.6;
-  background: var(--bg);
+  /* repeating holiday doodle background provided by user */
+  --doodle-size: 300px;
+  /* place the image first (bottom layer) and a translucent gradient above it */
+  background-image: url("../images/holiday_doodle.jpg"), linear-gradient(rgba(255,248,242,0.28), rgba(255,240,255,0.28));
+  background-repeat: repeat, no-repeat;
+  background-size: var(--doodle-size) var(--doodle-size), cover;
+  background-attachment: scroll, fixed;
+  background-position: 0 0, center center;
+}
+
+@media (max-width: 900px) {
+  body { --doodle-size: 220px; }
+}
+
+@media (max-width: 420px) {
+  body { --doodle-size: 160px; }
 }
 
 a { text-decoration: none; color: inherit; }
